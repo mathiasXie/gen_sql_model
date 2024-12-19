@@ -1,0 +1,31 @@
+# GoLand IDE 相关配置文件和目录
+
+# 忽略GoLand的项目配置目录
+.idea/
+
+# 忽略GoLand的编译输出目录
+out/
+
+# 忽略GoLand的备份文件和临时文件
+*.iml
+
+# 忽略GoLand生成的编译缓存文件
+.idea_modules/
+
+# 忽略GoLand的运行配置文件
+*.run.xml
+
+# 忽略GoLand的代码检查配置文件
+*.inspection.xml
+
+# 忽略GoLand的本地历史记录文件
+.idea/.history/
+
+# 忽略GoLand的VCS相关配置文件（如果有的话）
+.idea/vcs.xml
+
+# 忽略GoLand的数据库工具相关配置文件（如果有的话）
+.idea/databases.xml
+
+# 忽略GoLand的插件相关配置文件（如果有的话）
+.idea/plugins/
