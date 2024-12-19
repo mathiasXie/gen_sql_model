@@ -19,7 +19,7 @@ import (
 )
 
 // Thanks for ByteDance
-const ddl2StructTemplate = `// Code generated from [[ .SourceFile ]] by cbt. DO NOT EDIT.
+const ddl2StructTemplate = `// Code generated from [[ .SourceFile ]] by gen_sql_model. DO NOT EDIT.
 
 package [[ .PackageName ]]
 
