@@ -247,3 +247,19 @@ func isDir(name string) bool {
 	fi, err := os.Stat(name)
 	return err == nil && fi.IsDir()
 }
+
+func PluralToSingular(word string) string {
+	// 以 "s" 结尾的单词，直接去掉 "s"（适用于大部分简单复数情况，如 books -> book）
+	if strings.HasSuffix(word, "s") && len(word) > 1 {
+		return word[:len(word)-1]
+	}
+	// 以 "es" 结尾的单词，去掉 "es"（如 boxes -> box），但需排除一些特殊情况，这里简单判断单词长度大于3
+	if strings.HasSuffix(word, "es") && len(word) > 3 {
+		return word[:len(word)-2]
+	}
+	// 以 "ies" 结尾的单词，将 "ies" 变为 "y"（如 cities -> city），同样简单判断单词长度大于4
+	if strings.HasSuffix(word, "ies") && len(word) > 4 {
+		return word[:len(word)-3] + "y"
+	}
+	return word
+}

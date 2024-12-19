@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	ddlparser "github.com/mathiasXie/gen_sql_model/parsers"
+	"github.com/mathiasXie/gen_sql_model/utils/gofmt"
 	"os"
 	"strings"
 
@@ -58,7 +59,7 @@ type TableOption struct {
 func (c *CreateTableListener) EnterTableName(ctx *ddlparser.TableNameContext) {
 	nextStruct := &GoStruct{}
 	nextStruct.TableName = strings.Replace(ctx.GetText(), "`", "", -1)
-	nextStruct.StructName = strcase.ToCamel(strings.Replace(ctx.GetText(), "`", "", -1))
+	nextStruct.StructName = gofmt.PluralToSingular(strcase.ToCamel(strings.Replace(ctx.GetText(), "`", "", -1)))
 
 	c.Structs = append(c.Structs, nextStruct)
 }
